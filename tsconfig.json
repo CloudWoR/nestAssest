@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@libs/local-db": [
+        "libs/local-db/src"
+      ],
+      "@libs/local-db/*": [
+        "libs/local-db/src/*"
+      ],
+      "@libs/pacsdb": [
+        "libs/pacsdb/src"
+      ],
+      "@libs/pacsdb/*": [
+        "libs/pacsdb/src/*"
+      ],
+      "@libs/worklistdb": [
+        "libs/worklistdb/src"
+      ],
+      "@libs/worklistdb/*": [
+        "libs/worklistdb/src/*"
+      ],
+      "@libs/configure": [
+        "libs/configure/src"
+      ],
+      "@libs/configure/*": [
+        "libs/configure/src/*"
+      ]
+    }
+  }
+}

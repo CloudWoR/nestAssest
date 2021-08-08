@@ -1,0 +1,79 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/server/src",
+  "monorepo": true,
+  "root": "apps/server",
+  "compilerOptions": {
+    "webpack": true
+  },
+  "projects": {
+    "server": {
+      "type": "application",
+      "root": "apps/server",
+      "entryFile": "main",
+      "sourceRoot": "apps/server/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/server/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "../configure/*.yaml",
+            "outDir": "./dist/apps/server"
+          }
+        ],
+        "watchAssets": true
+      }
+    },
+    "admin": {
+      "type": "application",
+      "root": "apps/admin",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin/tsconfig.app.json"
+      }
+    },
+    "local-db": {
+      "type": "library",
+      "root": "libs/local-db",
+      "entryFile": "index",
+      "sourceRoot": "libs/local-db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/local-db/tsconfig.lib.json"
+      }
+    },
+    "pacsdb": {
+      "type": "library",
+      "root": "libs/pacsdb",
+      "entryFile": "index",
+      "sourceRoot": "libs/pacsdb/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/pacsdb/tsconfig.lib.json"
+      }
+    },
+    "worklistdb": {
+      "type": "library",
+      "root": "libs/worklistdb",
+      "entryFile": "index",
+      "sourceRoot": "libs/worklistdb/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/worklistdb/tsconfig.lib.json"
+      }
+    },
+    "configure": {
+      "type": "library",
+      "root": "libs/configure",
+      "entryFile": "index",
+      "sourceRoot": "libs/configure/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/configure/tsconfig.lib.json",
+        "assets": [
+          {
+            "include": "../configure/*.yaml",
+            "outDir": "./dist/apps/server"
+          }
+        ],
+        "watchAssets": true
+      }
+    }
+  }
+}
