@@ -1,12 +1,2 @@
-http:
-  host: 'localhost'
-  port: 8080
-
-db:
-  postgres:
-    url: 'localhost'
-    port: 5432
-    database: 'yaml-db'
-
-  sqlite:
-    database: 'sqlite.db'
+configure:
+  dir: libs/configure/configure/configInLibrary.yaml

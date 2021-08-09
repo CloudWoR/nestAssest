@@ -1,3 +1,4 @@
+import { ConfigureService } from '@libs/configure';
 import {
   Controller,
   Get,
@@ -19,6 +20,7 @@ export class ConfigTestController {
   constructor(
     private readonly configTestService: ConfigTestService,
     private readonly config: ConfigService,
+    private readonly libsConfig: ConfigureService,
   ) {}
 
   @Post()
@@ -28,8 +30,8 @@ export class ConfigTestController {
 
   @Get()
   findAll() {
-    console.log('配制：', this.config.get<string>('http'));
-    console.log('process：', this.config.get<string>('database'));
+    console.log('server/configure', this.config.get<string>('http'));
+    this.libsConfig.libsConfigTest();
     return this.configTestService.findAll();
   }
 
