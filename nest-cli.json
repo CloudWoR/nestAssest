@@ -4,7 +4,8 @@
   "monorepo": true,
   "root": "apps/server",
   "compilerOptions": {
-    "webpack": true
+    "webpack": true,
+    "tsConfigPath": "apps/server/tsconfig.app.json"
   },
   "projects": {
     "server": {
@@ -16,63 +17,79 @@
         "tsConfigPath": "apps/server/tsconfig.app.json",
         "assets": [
           {
-            "include": "../configure/*.yaml",
-            "outDir": "./dist/apps/server"
-          }
-        ],
-        "watchAssets": true
-      }
-    },
-    "admin": {
-      "type": "application",
-      "root": "apps/admin",
-      "entryFile": "main",
-      "sourceRoot": "apps/admin/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/admin/tsconfig.app.json"
-      }
-    },
-    "local-db": {
-      "type": "library",
-      "root": "libs/local-db",
-      "entryFile": "index",
-      "sourceRoot": "libs/local-db/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/local-db/tsconfig.lib.json"
-      }
-    },
-    "pacsdb": {
-      "type": "library",
-      "root": "libs/pacsdb",
-      "entryFile": "index",
-      "sourceRoot": "libs/pacsdb/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/pacsdb/tsconfig.lib.json"
-      }
-    },
-    "worklistdb": {
-      "type": "library",
-      "root": "libs/worklistdb",
-      "entryFile": "index",
-      "sourceRoot": "libs/worklistdb/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/worklistdb/tsconfig.lib.json"
-      }
-    },
-    "configure": {
-      "type": "library",
-      "root": "libs/configure",
-      "entryFile": "index",
-      "sourceRoot": "libs/configure/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/configure/tsconfig.lib.json",
-        "assets": [
+            "include": "../config/*.yaml",
+            "outDir": "./dist/config",
+            "watchAssets": true
+          },
           {
-            "include": "../configure/*.yaml",
-            "outDir": "./dist/apps/server"
+            "include": "../docker/*.*",
+            "outDir": "./dist/docker",
+            "watchAssets": true
           }
-        ],
-        "watchAssets": true
+        ]
+      }
+    },
+    "file-service": {
+      "type": "application",
+      "root": "apps/file-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/file-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/file-service/tsconfig.app.json"
+      }
+    },
+    "film-service": {
+      "type": "application",
+      "root": "apps/film-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/film-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/film-service/tsconfig.app.json"
+      }
+    },
+    "report-service": {
+      "type": "application",
+      "root": "apps/report-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/report-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/report-service/tsconfig.app.json"
+      }
+    },
+    "printer-service": {
+      "type": "application",
+      "root": "apps/printer-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/printer-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/printer-service/tsconfig.app.json"
+      }
+    },
+    "system-logger": {
+      "type": "library",
+      "root": "libs/system-logger",
+      "entryFile": "index",
+      "sourceRoot": "libs/system-logger/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/system-logger/tsconfig.lib.json"
+      }
+    },
+    "broker-nats": {
+      "type": "application",
+      "root": "apps/broker-nats",
+      "entryFile": "main",
+      "sourceRoot": "apps/broker-nats/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/broker-nats/tsconfig.app.json"
+      }
+    },
+    "broker-redis": {
+      "type": "application",
+      "root": "apps/broker-redis",
+      "entryFile": "main",
+      "sourceRoot": "apps/broker-redis/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/broker-redis/tsconfig.app.json"
       }
     }
   }

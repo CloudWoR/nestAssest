@@ -1,0 +1,4 @@
+database:
+  hostname: 'localhst'
+  password: 'localhost'
+  port: 3306

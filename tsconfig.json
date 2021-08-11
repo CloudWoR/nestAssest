@@ -11,30 +11,13 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
+    "skipLibCheck": true,
     "paths": {
-      "@libs/local-db": [
-        "libs/local-db/src"
+      "@libs/system-logger": [
+        "libs/system-logger/src"
       ],
-      "@libs/local-db/*": [
-        "libs/local-db/src/*"
-      ],
-      "@libs/pacsdb": [
-        "libs/pacsdb/src"
-      ],
-      "@libs/pacsdb/*": [
-        "libs/pacsdb/src/*"
-      ],
-      "@libs/worklistdb": [
-        "libs/worklistdb/src"
-      ],
-      "@libs/worklistdb/*": [
-        "libs/worklistdb/src/*"
-      ],
-      "@libs/configure": [
-        "libs/configure/src"
-      ],
-      "@libs/configure/*": [
-        "libs/configure/src/*"
+      "@libs/system-logger/*": [
+        "libs/system-logger/src/*"
       ]
     }
   }
